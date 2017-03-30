@@ -25,5 +25,7 @@ function twoSum(numList, target) {
 
 }
 
+console.time('Solution');
 var answer = twoSum(testCase, target);
+console.timeEnd('Solution');
 console.log( 'answer', answer );

@@ -5,38 +5,38 @@
 
 // O(n) space
 
-var testCase = 50;
+var testCase = 23;
 
 function nthFibMemo(n) {
-    
+
     var hash = {};
-    
+
     function memoFib(num) {
-        
+
         var value;
-        
+
         if (num in hash) {
-            
+
             value = hash[num];
-            
+
         } else {
-            
+
             if (num < 2) {
                value = num;
            } else {
                value = memoFib(num - 1) + memoFib(num - 2);
            }
-           
+
             hash[num] = value;
-            
+
         }
-        
+
         return value;
-        
+
     };
-    
+
     return memoFib(n);
-    
+
 }
 
 console.time('Solution');

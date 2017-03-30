@@ -18,5 +18,7 @@ function fibonacci(index) {
 
 }
 
+console.time('Solution');
 var answer = fibonacci(testCase);
+console.timeEnd('Solution');
 console.log('Answer', answer);
