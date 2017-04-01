@@ -1,50 +1,48 @@
 'use strict';
 
 // Give an array of integer elements and an integer `d`, consider all sequences of `d`
-// consecutive elements in the array.  For each sequence comput the difference between
+// consecutive elements in the array.  For each sequence compute the difference between
 // the max and the min value of the elements in that sequence and name it the deviation
 
-var testCase = generateTestCase(30);
-var sequenceLen = 5;
+var testCase = generateTestCase(100000);
+var sequenceLen = 45000;
 
 function maxDeviationSequence(v, d) {
 
-    var len = v.length;
-    var curMaxDev = 0;
+    var maxDiff = 0;
 
-    for (var i = 0; i < len; i++) {
+    for (var i = 0, len = v.length - d; i < len; i++) {
 
-        if (len - i < d) {
+        var hi = 0;
+        var lo = 0;
 
-            return curMaxDev;
+        for (var k = i, stop = i + d; k < stop; k++) {
 
-        } else {
+            var val = v[k];
 
-            var temp = [];
+            if (val > hi) {
 
-            for (var k = 0; k < d; k++) {
+                hi = val;
 
-                temp[k] = v[i + k];
+            } else if (val < lo) {
 
-            }
-
-            temp.sort((a, b) => {
-                return a - b;
-            });
-
-            var tempMaxDev = temp[temp.length - 1] - temp[0];
-
-            if (tempMaxDev > curMaxDev) {
-
-                curMaxDev = tempMaxDev;
+                lo = val;
 
             }
 
         }
 
+        var currDiff = hi - lo;
+
+        if (currDiff > maxDiff) {
+
+            maxDiff = currDiff;
+
+        }
+
     }
 
-    return curMaxDev;
+    return maxDiff;
 
 }
 
@@ -54,7 +52,7 @@ function generateTestCase(n) {
 
     for (var i = 0; i < n; i++) {
 
-        test.push(getRandBetween(1, 10000));
+        test.push(getRandBetween(-10000000000000000000000, 100000000000000000000000));
 
     }
 
