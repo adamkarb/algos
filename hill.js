@@ -1,7 +1,6 @@
 'use strict';
 
-// var testCase = generateTestCase(5000);
-var testCase = [3, 3, 3, 3, 3, 3];
+var testCase = generateTestCase(5000);
 
 function hill(nums) {
 
