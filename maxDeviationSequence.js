@@ -136,7 +136,7 @@ function getRandBetween(min, max) {
 }
 
 console.time('solution');
-var answer = maxDeviationSequence(testCase, sequenceLen);
-// var answer = maxDeviationSequence([6, 9, 4, 56, 6, 2], 3); // 6
+// var answer = maxDeviationSequence(testCase, sequenceLen);
+var answer = maxDeviationSequence([6, 9, 4, 7, 4, 1], 3); // 6
 console.timeEnd('solution');
 console.log('Answer', answer);
