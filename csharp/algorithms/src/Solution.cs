@@ -1,11 +1,12 @@
 ﻿using System;
 namespace algorithms.src
 {
-    public class Solution<T> where T : BaseSolution, new()
+    public class Solution<TSolution, TResult> where TSolution : BaseSolution<TResult>, new()
     {
         public void RunTest()
         {
-            var solution = new T();
+            var solution = new TSolution();
+            solution.SetupTest();
             var start = DateTime.Now.Millisecond;
             var result = solution.Solve();
             var end = DateTime.Now.Millisecond;
