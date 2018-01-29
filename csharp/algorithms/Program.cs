@@ -10,8 +10,10 @@ namespace algorithms
     {
         static void Main(string[] args)
         {
-            var solution = new Solution<DoArrayMembersSumToNumber, Maybe<IEnumerable<int>>>();
-            solution.RunTest();
+            //var solution = new Solution<Gcd, int>();
+            //var solution = new Solution<DoArrayMembersSumToNumber, Maybe<IEnumerable<int>>>();
+            //var solution = new Solution<NthFibonacci, int>();
+            //solution.RunTest();
         }
     }
 }
